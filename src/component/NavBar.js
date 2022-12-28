@@ -6,8 +6,9 @@ import {
   FaBell,
   FaFacebookMessenger,
 } from "react-icons/fa";
-import user from "../assets/person/3.jpeg";
+import users from "../assets/person/3.jpeg";
 const NavBar = () => {
+  const user = {};
   return (
     <div className="grid grid-cols-3  gap-3 bg-primary p-4">
       <div>
@@ -26,7 +27,7 @@ const NavBar = () => {
       <div className="mt-2 md:ml-8">
         <ul className="flex gap-3 text-white ">
           <li>
-            <Link>Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link>Timeline</Link>
@@ -49,13 +50,32 @@ const NavBar = () => {
               5
             </span>
           </li>
-          <li className="md:ml-4">
-            <img
-              src={user}
-              className="w-8 h-8 rounded-full object-cover "
-              alt=""
-            />
-          </li>
+          {user ? (
+            <>
+              <li>
+                <Link to="/login">
+                  <button className="btn btn-primary btn-sm">Login</button>
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="md:ml-4">
+                <Link to="/profile">
+                  <img
+                    src={users}
+                    className="w-8 h-8 rounded-full object-cover "
+                    alt=""
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link>
+                  <button className="btn btn-primary btn-xs">LogOut</button>
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>

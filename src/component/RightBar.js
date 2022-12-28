@@ -1,7 +1,7 @@
 import React from "react";
 import gift from "../assets/gift.png";
 import ad from "../assets/ad.png";
-import friend from "../assets/person/4.jpeg";
+
 import { Users } from "../FalseData";
 import OnlineFriend from "./OnlineFriend";
 const RightBar = () => {
