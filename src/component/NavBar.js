@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import {
   FaSearch,
@@ -6,9 +6,11 @@ import {
   FaBell,
   FaFacebookMessenger,
 } from "react-icons/fa";
-import users from "../assets/person/3.jpeg";
+
+import { AuthUserContext } from "../Context/UserContext";
 const NavBar = () => {
-  const user = {};
+  const { user, userLogout } = useContext(AuthUserContext);
+  console.log(user);
   return (
     <div className="grid grid-cols-3  gap-3 bg-primary p-4">
       <div>
@@ -50,20 +52,12 @@ const NavBar = () => {
               5
             </span>
           </li>
-          {user ? (
-            <>
-              <li>
-                <Link to="/login">
-                  <button className="btn btn-primary btn-sm">Login</button>
-                </Link>
-              </li>
-            </>
-          ) : (
+          {user?.email ? (
             <>
               <li className="md:ml-4">
                 <Link to="/profile">
                   <img
-                    src={users}
+                    src={user?.photoURL}
                     className="w-8 h-8 rounded-full object-cover "
                     alt=""
                   />
@@ -71,7 +65,20 @@ const NavBar = () => {
               </li>
               <li>
                 <Link>
-                  <button className="btn btn-primary btn-xs">LogOut</button>
+                  <button
+                    onClick={userLogout}
+                    className="btn btn-primary btn-xs"
+                  >
+                    LogOut
+                  </button>
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/login">
+                  <button className="btn btn-primary btn-sm">Login</button>
                 </Link>
               </li>
             </>
