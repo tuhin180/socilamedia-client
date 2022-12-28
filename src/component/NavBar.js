@@ -33,24 +33,28 @@ const NavBar = () => {
           </li>
           <li className="flex md:ml-3 ">
             <FaUserAlt className="text-xl " />
-            <span className=" -mt-2 bg-red-500 px-1 py-0 mb-2 rounded-full">
+            <span className=" -mt-2 bg-red-500 px-1 py-0 mb-4 rounded-full">
               3
             </span>
           </li>
           <li className="flex ">
             <FaBell className="text-xl " />
-            <span className=" -mt-2 bg-red-500 px-1 py-0 mb-2 rounded-full">
+            <span className=" -mt-2 bg-red-500 px-1 py-0 mb-4 rounded-full">
               1
             </span>
           </li>
           <li className="flex ">
             <FaFacebookMessenger className="text-xl " />
-            <span className=" -mt-2 bg-red-500 px-1 py-0 mb-2 rounded-full">
+            <span className=" -mt-2 bg-red-500 px-1 py-0 mb-4 rounded-full">
               5
             </span>
           </li>
           <li className="md:ml-4">
-            <img src={user} className="w-8 rounded-full object-cover " alt="" />
+            <img
+              src={user}
+              className="w-8 h-8 rounded-full object-cover "
+              alt=""
+            />
           </li>
         </ul>
       </div>
