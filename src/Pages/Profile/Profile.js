@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Feed from "../../component/Feed";
 import LeftBar from "../../component/LeftBar";
 
@@ -6,8 +6,10 @@ import banner from "../../assets/post/3.jpeg";
 import banner1 from "../../assets/post/4.jpeg";
 
 import { Users } from "../../FalseData";
+import { AuthUserContext } from "../../Context/UserContext";
 
 const Profile = () => {
+  const { user } = useContext(AuthUserContext);
   return (
     <div className="flex ">
       <div className="basis-1/4 h-[calc(100vh-50px)] overflow-y-scroll  ">
@@ -19,10 +21,12 @@ const Profile = () => {
           <img className="w-full h-80 " src={banner} alt="" />
           <img
             className="w-28 h-28 rounded-full mx-auto -mt-20  "
-            src={banner1}
+            src={user?.PhootUrl}
             alt=""
           />
-          <h1 className="font-bold text-2xl text-center"> MD.Tuhin Hossain</h1>
+          <h1 className="font-bold text-2xl text-center">
+            {user?.displayName}
+          </h1>
           <p className="text-center font-light">
             When life gets you down remember that, there is only one down,rest
             is up

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import Spinner from "../components/Spinner/Spinner";
+import Spinner from "../component/Spinner/Spinner";
 
 import { AuthUserContext } from "../Context/UserContext";
 

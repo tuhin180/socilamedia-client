@@ -6,8 +6,7 @@ import PrimaryButton from "../component/Button/PrimaryButton";
 import { AuthUserContext } from "../Context/UserContext";
 
 const Register = () => {
-  const { createUser, userProfile, googleLogin, loading, setLoading } =
-    useContext(AuthUserContext);
+  const { createUser, userProfile, googleLogin } = useContext(AuthUserContext);
 
   const navigate = useNavigate();
   const location = useLocation();

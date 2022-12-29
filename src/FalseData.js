@@ -85,7 +85,7 @@ export const posts = [
   },
   {
     id: 2,
-    desc: "amazed place with gorgeous view",
+    desc: "new place ",
     photo: post2,
     date: "5 min ago",
     userId: 2,
